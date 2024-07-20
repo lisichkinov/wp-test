@@ -1,0 +1,11 @@
+{
+    "name": "lisi4/hello",
+    "description": "Hellow world WP plugin",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Lisi4\\Hello\\": "src/"
+        }
+    },
+    "require": {}
+}

@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "build": "wp-scripts build ./resources/src/admin.tsx --output-path=resources/js --webpack-no-externals"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^28.3.0"
+  }
+}
