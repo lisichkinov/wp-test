@@ -16,7 +16,7 @@ class Quiz
   {
     add_action('init', [$this, 'register'], 5);
     add_action('add_meta_boxes', [$this, 'addMetaBoxes'], 20);
-    add_action('save_post_holiday', [$this, 'save']);
+    add_action('save_post_quiz', [$this, 'save']);
     add_action('admin_enqueue_scripts', [$this, 'addScriptsAndStyles']);
   }
 
@@ -69,8 +69,10 @@ class Quiz
     ]);
   }
 
-  public function save()
+  public function save($id)
   {
+    $questions  = filter_input(INPUT_POST, 'questions');
+
     // TODO: save
   }
 
@@ -83,7 +85,9 @@ class Quiz
     }
 
     $this
+      ->registerStyle('quiz-style-admin', 'admin.css')
       ->registerScript('quiz-script-admin', 'admin.tsx.js', ['react', 'react-dom'])
+      ->addStyle('quiz-style-admin')
       ->addScript('quiz-script-admin');
   }
 }

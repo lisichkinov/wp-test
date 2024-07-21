@@ -1,15 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'
+import { __ } from '@wordpress/i18n'
 
-const Question = () => {
+import Answer from './Answer'
 
-  const addAnswer = () => {
+const Question = ( { question, addAnswer } ) => {
 
-  }
-  
   return (
     <li>
-      <h1>Question</h1>
-      <button onClick={addAnswer}>Add</button>
+      <input type="text" defaultValue={question.text} onChange={(e) => question.text = e.target.value} />
+      <ul className="answers">
+        { question.answers?.map( ( answer ) => <Answer answer={ answer } /> ) }
+      </ul>
+      <button onClick={(e) => addAnswer(e, { text: '' } ) }>{__( 'Add answer', 'lisi4-hello' )}</button>
     </li>
   )
 }

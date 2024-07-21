@@ -4,5 +4,8 @@
   },
   "devDependencies": {
     "@wordpress/scripts": "^28.3.0"
+  },
+  "dependencies": {
+    "@wordpress/i18n": "^5.3.0"
   }
 }

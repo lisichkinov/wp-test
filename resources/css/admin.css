@@ -1,0 +1,16 @@
+.questions input {
+  width: 100%;
+  margin-bottom: 6px;
+}
+
+.questions li button {
+  margin-bottom: 6px;
+}
+
+.questions li {
+  margin-bottom: 0;
+}
+
+.answers {
+  margin-left: 20px;
+}

@@ -7,7 +7,7 @@ trait HasStyles
   protected function registerStyle(string $handle, string $src, array $deps = [])
   {
     if (!filter_var($src, FILTER_VALIDATE_URL)) {
-      $url = LISI4_HELLO_RESOURCES_URL . '/css/' . $src;
+      $url = LISI4_HELLO_RESOURCES_URL . 'css/' . $src;
     } else {
       $url = $src;
     }
