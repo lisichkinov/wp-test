@@ -64,8 +64,12 @@ class Quiz
 
   public function renderQuestionsMetabox()
   {
+    $questions = get_post_meta(get_the_ID(), 'questions', true);
+
     echo $this->render('metaboxes/questions', [
-      'config' => []
+      'config' => [
+        'questions' => $questions ? $questions : [],
+      ]
     ]);
   }
 
@@ -73,6 +77,7 @@ class Quiz
   {
     $questions  = filter_input(INPUT_POST, 'questions');
 
+    update_post_meta($id, 'questions', $questions);
     // TODO: save
   }
 

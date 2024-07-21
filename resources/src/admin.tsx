@@ -9,7 +9,7 @@ const container = document.getElementById( 'quiz-admin-questions' )
 const config = JSON.parse( container?.dataset?.config ?? '[]' )
 
 const App = () => {
-    const [ questions, setQuestions ] = useState<TQuestion[]>( config.questions ?? [] )
+    const [ questions, setQuestions ] = useState<TQuestion[]>( JSON.parse( config.questions) ?? [] )
 
     const addQuestion = ( event, question ) => {
       event.preventDefault()
